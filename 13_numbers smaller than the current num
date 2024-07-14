@@ -1,0 +1,15 @@
+def smallerNumbersThanCurrent(nums):
+    sorted_nums = sorted(nums)
+    
+    count_map = {}
+    for index, num in enumerate(sorted_nums):
+        if num not in count_map:
+            count_map[num] = index
+    
+    result = [count_map[num] for num in nums]
+    
+    return result
+
+nums = [8, 1, 2, 2, 3]
+print("Input:", nums)
+print("Output:", smallerNumbersThanCurrent(nums))  # Output: [4, 0, 1, 1, 3]
